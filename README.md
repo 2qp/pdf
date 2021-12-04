@@ -1,0 +1,1 @@
+# Text Extraction from PDF Files using QT5
