@@ -23,8 +23,15 @@ public:
 private slots:
     void on_actionLoad_triggered();
 
+    void on_actionRead_triggered();
+
+    void ischecked(bool checked);
+
+    void on_actionDuplicates_triggered();
+
 private:
     Ui::MainWindow *ui;
     extractor extract;
+
 };
 #endif // MAINWINDOW_H

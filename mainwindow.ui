@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1068</width>
+    <height>643</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,6 +22,9 @@
       <width>321</width>
       <height>381</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> border-radius:10px; background-color: palette(base);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
@@ -48,11 +51,14 @@
       <height>381</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> border-radius:10px; background-color: palette(base);</string>
+    </property>
     <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
+     <enum>QFrame::WinPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
+     <enum>QFrame::Raised</enum>
     </property>
     <property name="lineWidth">
      <number>1</number>
@@ -62,6 +68,68 @@
     </property>
     <property name="placeholderText">
      <string>Output</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>80</y>
+      <width>231</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {border-radius: 10px; background-color: palette(base);}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>10</y>
+       <width>121</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Read all pages</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>45</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="pgcount">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>64</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLCDNumber" name="counts">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>450</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -95,7 +163,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1068</width>
      <height>22</height>
     </rect>
    </property>
