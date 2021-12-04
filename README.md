@@ -36,3 +36,18 @@ QT       += core gui pdf
 
 # then run qmake
 ```
+----------------------------
+
+##### Resources
+```sh
+
+<a target="_blank" href="https://icons8.com/icon/47259/remove">Remove</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/v16dJrelnUu6/import-pdf">Import Pdf</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+
+<a target="_blank" href="https://icons8.com/icon/Zh9dun0fZ6kf/rich-text-converter">Rich Text Converter</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/37667/clear-symbol">Clear Symbol</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+```
