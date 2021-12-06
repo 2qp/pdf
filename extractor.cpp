@@ -16,34 +16,28 @@ void extractor::load(QWidget * (t))
     gg = new QStringList;
     selectedText = new QString;
     allText = new QString;
+    b = new QString;
 }
 
 
 void extractor::extr(int page)
 {
-    // validatipon
-    if(document->status() == 2) {
-        // filestatus
-        filestatus = true;
-        if(checkboxc == true) {
-            readal();
-        } else {
-            *allText = document->getAllText(page).text();
-        }
-        // Removing special characters
-        QString b = allText->remove(QRegExp("[\\^$(){},>.:;*#_=<!+-/]+"));
-        std::string a = b.toStdString();
-        // Takes only space separated C++ strings.
-        splitter(a);
-        // Converstion of Qlist to const to pump texedit
-        //s = new QStringList;
-        s = templist;
-        //delete templist;
-        // pages count
-        pgcount = document->pageCount();
+    if(checkboxc == true) {
+        readal();
     } else {
-        filestatus = false;
+        *allText = document->getAllText(page).text();
     }
+    // Removing special characters
+    *b = allText->remove(QRegExp("[\\^$(){},>.:;*#_=<!+-/]+"));
+    std::string a = b->toStdString();
+    // Takes only space separated C++ strings.
+    splitter(a);
+    // Converstion of Qlist to const to pump texedit
+    //s = new QStringList;
+    s = templist;
+    //delete templist;
+    // pages count
+    pgcount = document->pageCount();
 }
 
 QStringList * extractor::splitter(string t)

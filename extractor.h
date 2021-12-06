@@ -24,24 +24,28 @@ public:
     void extr(int page);
     bool checkboxc;
     int pgcount;
-    bool filestatus;
 
     // obj
     QString *allText;
     QStringList *s;
     QStringList *gg;
+    QStringList *templist;
+    QString *selectedText;
+    QPdfDocument *document = new QPdfDocument;
+    QString *b;
 
 private:
-    QPdfDocument *document = new QPdfDocument;
+    //QPdfDocument *document = new QPdfDocument;
     QString filename;
 
     // objs
     QStringList * splitter(string);
     void readal();
-    QStringList *templist;
 
 
-    QString *selectedText;
+
+
+
 
 };
 

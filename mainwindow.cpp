@@ -23,26 +23,27 @@ void MainWindow::on_actionLoad_triggered()
 
 void MainWindow::on_actionRead_triggered()
 {
-    int page = ui->spinBox->text().toInt();
-    if(ui->checkBox->isChecked()) {
-        extract.checkboxc = true;
-        extract.extr(page);
-        ui->textEdit->append(*extract.allText);
-    } else {
-        extract.checkboxc = false;
-        extract.extr(page);
-        ui->textEdit->setText(*extract.allText);
-    }
-    // appending to splitter
-    for(int i = 0 ; i < extract.s->length() ; i++) {
-        ui->splitter->append(extract.s->at(i));
-    }
-    // counting the list
-    int counter = ui->splitter->document()->blockCount();
-    ui->counts->display(counter);
-    // page count of pdf
-    ui->pgcount->display(extract.pgcount);
-    if(extract.filestatus == false) {
+    if(extract.document->status() == 2) {
+        int page = ui->spinBox->text().toInt();
+        if(ui->checkBox->isChecked()) {
+            extract.checkboxc = true;
+            extract.extr(page);
+            ui->plainTextEdit->appendPlainText(*extract.allText);
+        } else {
+            extract.checkboxc = false;
+            extract.extr(page);
+            ui->plainTextEdit->setPlainText(*extract.allText);
+        }
+        // appending to splitter
+        for(int i = 0 ; i < extract.s->length() ; i++) {
+            ui->splitter->appendPlainText(extract.s->at(i));
+        }
+        // counting the list
+        int counter = ui->splitter->document()->blockCount();
+        ui->counts->display(counter);
+        // page count of pdf
+        ui->pgcount->display(extract.pgcount);
+    } else  {
         QMessageBox::information(this, "Error", "PDF File Not Loaded", QMessageBox::Ok);
     }
 }
@@ -64,7 +65,7 @@ void MainWindow::on_actionDuplicates_triggered()
     extract.s->removeDuplicates();
     extract.gg = extract.s;
     for(int i = 0 ; i < extract.gg->length() ; i++) {
-        ui->splitter->append(extract.gg->at(i));
+        ui->splitter->appendPlainText(extract.gg->at(i));
     }
     //delete gg;
     // --
@@ -75,4 +76,22 @@ void MainWindow::on_actionDuplicates_triggered()
     //unsigned long ab = sizeof (gg);
     //QString vv = QString::number(ab);
     // ui->label->setText(vv);
+}
+
+void MainWindow::on_actionClear_triggered()
+{
+    //delete document;
+    //delete s;
+    //delete templist;
+    //delete gg;
+    extract.templist->clear();
+    extract.s->clear();
+    extract.gg->clear();
+    ui->splitter->clear();
+    ui->plainTextEdit->clear();
+    extract.allText->clear();
+    extract.selectedText->clear();
+    extract.document->close();
+    extract.b->clear();
+    //document->destroyed();
 }
