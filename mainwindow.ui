@@ -134,6 +134,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="whatsThis">
+     <string/>
+    </property>
     <property name="styleSheet">
      <string notr="true">QLCDNumber{
   background-color: rgb(0, 0, 0);
@@ -142,6 +145,19 @@
   border-radius: 5px;
   color: rgb(255, 255, 255);
 }</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>450</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Word Count :</string>
     </property>
    </widget>
   </widget>
@@ -169,6 +185,7 @@
    <addaction name="actionDuplicates"/>
    <addaction name="separator"/>
    <addaction name="actionClear"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -227,6 +244,27 @@
    </property>
    <property name="toolTip">
     <string>Reset and clear</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="qtr.qrc">
+     <normaloff>:/icons/raw.png</normaloff>:/icons/raw.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionSave_Sliced_Output">
+   <property name="icon">
+    <iconset resource="qtr.qrc">
+     <normaloff>:/icons/saveas.png</normaloff>:/icons/saveas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Sliced Output</string>
    </property>
   </action>
  </widget>

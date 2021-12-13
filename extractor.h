@@ -10,6 +10,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QObject>
+#include <QTextStream>
 
 
 using namespace std;
@@ -22,6 +23,7 @@ public:
     extractor();
     void load(QWidget * t);
     void extr(int page);
+    void save(QString);
     bool checkboxc;
     int pgcount;
 

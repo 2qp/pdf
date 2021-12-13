@@ -1,11 +1,23 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // Manual Actions
+    QMenu *menu = new QMenu();
+    menu->addAction(ui->actionSave);
+    menu->addAction(ui->actionSave_Sliced_Output);
+    QToolButton* toolButton = new QToolButton();
+    toolButton->setIcon(QIcon(":/icons/save2.png"));
+    toolButton->setMenu(menu);
+    toolButton->setPopupMode(QToolButton::InstantPopup);
+    ui->toolBar->addWidget(toolButton);
+    //
+    // Connections
     //connect(ui->actionLoad, SIGNAL(triggered()), this, SLOT(on_actionLoad_triggered()));
     connect(ui->checkBox, SIGNAL(clicked(bool)), this, SLOT(ischecked(bool)));
 }
@@ -94,4 +106,16 @@ void MainWindow::on_actionClear_triggered()
     extract.document->close();
     extract.b->clear();
     //document->destroyed();
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    QString text = ui->plainTextEdit->toPlainText();
+    extract.save(text);
+}
+
+void MainWindow::on_actionSave_Sliced_Output_triggered()
+{
+    QString text2 = ui->splitter->toPlainText();
+    extract.save(text2);
 }

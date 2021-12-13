@@ -63,3 +63,11 @@ void extractor::readal()
 }
 
 
+void extractor::save(QString text)
+{
+    QString outputFile = QFileDialog::getSaveFileName(nullptr, "Save as", ".", "Docs (*.docx *.odf);;Text files (*.txt);;XML files (*.xml)" );
+    QFile Saved(outputFile);
+    Saved.open(QFile::WriteOnly | QFile::Truncate | QFile::Text);
+    QTextStream out(&Saved);
+    out << text;
+}

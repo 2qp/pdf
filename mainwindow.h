@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtPdf/QPdfDocument>
 #include "extractor.h"
+#include <QToolButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -30,6 +30,10 @@ private slots:
     void on_actionDuplicates_triggered();
 
     void on_actionClear_triggered();
+
+    void on_actionSave_triggered();
+
+    void on_actionSave_Sliced_Output_triggered();
 
 private:
     Ui::MainWindow *ui;

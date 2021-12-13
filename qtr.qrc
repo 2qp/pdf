@@ -4,5 +4,8 @@
         <file>icons/clear.png</file>
         <file>icons/text2.png</file>
         <file>icons/pdf2.png</file>
+        <file>icons/save2.png</file>
+        <file>icons/saveas.png</file>
+        <file>icons/raw.png</file>
     </qresource>
 </RCC>
