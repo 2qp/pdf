@@ -35,9 +35,16 @@ private slots:
 
     void on_actionSave_Sliced_Output_triggered();
 
+    void showMax();
+
 private:
     Ui::MainWindow *ui;
     extractor extract;
 
+    // dragger
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    int m_x;
+    int m_y;
 };
 #endif // MAINWINDOW_H

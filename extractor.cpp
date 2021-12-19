@@ -17,6 +17,8 @@ void extractor::load(QWidget * (t))
     selectedText = new QString;
     allText = new QString;
     b = new QString;
+    // pages count
+    pgcount = document->pageCount();
 }
 
 
@@ -36,8 +38,6 @@ void extractor::extr(int page)
     //s = new QStringList;
     s = templist;
     //delete templist;
-    // pages count
-    pgcount = document->pageCount();
 }
 
 QStringList * extractor::splitter(string t)

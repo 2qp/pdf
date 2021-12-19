@@ -6,165 +6,360 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1068</width>
-    <height>643</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPlainTextEdit" name="plainTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>60</y>
-      <width>321</width>
-      <height>381</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"> border-radius:10px; background-color: palette(base);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="placeholderText">
-     <string>Raw Output</string>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="splitter">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>60</y>
-      <width>321</width>
-      <height>381</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"> border-radius:10px; background-color: palette(base);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="placeholderText">
-     <string>Sliced Output</string>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>740</x>
-      <y>80</y>
-      <width>231</width>
-      <height>211</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QFrame {border-radius: 10px; background-color: palette(base);}</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QCheckBox" name="checkBox">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>10</y>
-       <width>121</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Read all pages</string>
-     </property>
-    </widget>
-    <widget class="QSpinBox" name="spinBox">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>45</width>
-       <height>26</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLCDNumber" name="pgcount">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>60</y>
-       <width>64</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLCDNumber{
-  background-color: rgb(0, 0, 0);
-  border: 2px solid rgb(113, 113, 113);
-  border-width: 2px;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="drop">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.183673 rgba(97, 40, 255, 255), stop:0.535714 rgba(62, 76, 160, 255));
+border-radius:10px;
 }</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLCDNumber" name="counts">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>450</y>
-      <width>64</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="whatsThis">
-     <string/>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLCDNumber{
-  background-color: rgb(0, 0, 0);
-  border: 2px solid rgb(113, 113, 113);
-  border-width: 2px;
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-}</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>450</y>
-      <width>81</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Word Count :</string>
-    </property>
-   </widget>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QFrame" name="menu_bar">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QFrame" name="title_frame">
+            <property name="styleSheet">
+             <string notr="true">background-color: none;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="lbl_title">
+               <property name="font">
+                <font>
+                 <pointsize>13</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>PDF Extractor</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="btns_frame">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: none;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QPushButton" name="btn_min">
+               <property name="minimumSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>17</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Minimize</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    border: none;
+    border-radius:8px;
+    background-color: rgb(85, 255, 127);
+    }
+    QPushButton:hover {
+        background-color: rgb(67, 204, 88);
+    }</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_max">
+               <property name="minimumSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>17</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Maximize</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    border: none;
+    border-radius:8px;
+    background-color: rgb(255, 120, 10);
+    }
+    QPushButton:hover {
+        background-color: rgb(181, 94, 24);
+    }</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_close">
+               <property name="minimumSize">
+                <size>
+                 <width>16</width>
+                 <height>16</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>17</width>
+                 <height>17</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Close</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    border: none;
+    border-radius:8px;
+        background-color: rgb(224, 27, 36);
+    }
+    QPushButton:hover {
+        
+        background-color: rgb(194, 127, 127);
+    }</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="content">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QFrame" name="raw_frame">
+            <property name="styleSheet">
+             <string notr="true">background-color: none;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QPlainTextEdit" name="plainTextEdit">
+               <property name="styleSheet">
+                <string notr="true">border-radius:10px; background-color: palette(base);</string>
+               </property>
+               <property name="placeholderText">
+                <string>Raw</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="output_frame">
+            <property name="styleSheet">
+             <string notr="true">background-color: none;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QPlainTextEdit" name="splitter">
+               <property name="styleSheet">
+                <string notr="true">border-radius:10px; background-color: palette(base);</string>
+               </property>
+               <property name="placeholderText">
+                <string>Output</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLCDNumber" name="counts">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius:5px; background-color: palette(base);</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="toolbox">
+            <property name="styleSheet">
+             <string notr="true">background-color: none;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="lbl_page">
+               <property name="text">
+                <string>Page</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QSpinBox" name="spinBox"/>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QLabel" name="lbl_readall">
+               <property name="text">
+                <string>Read all</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QCheckBox" name="checkBox">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="lbl_pagescount">
+               <property name="text">
+                <string>Pages</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1" colspan="2">
+              <widget class="QLCDNumber" name="pgcount"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar {
+
+
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.183673 rgba(97, 40, 255, 255), stop:0.535714 rgba(62, 76, 160, 255));
+border-radius:10px;
+
+
+}</string>
    </property>
    <property name="iconSize">
     <size>
@@ -178,6 +373,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="separator"/>
    <addaction name="actionLoad"/>
    <addaction name="separator"/>
    <addaction name="actionRead"/>
@@ -186,16 +382,6 @@
    <addaction name="separator"/>
    <addaction name="actionClear"/>
    <addaction name="separator"/>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1068</width>
-     <height>22</height>
-    </rect>
-   </property>
   </widget>
   <action name="actionLoad">
    <property name="icon">
