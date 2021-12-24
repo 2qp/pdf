@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     toolButton->setPopupMode(QToolButton::InstantPopup);
     ui->toolBar->addWidget(toolButton);
     //
+    // Lcd number digit clr
+    ui->counts->setPalette(Qt::black);
     // Connections
     //connect(ui->actionLoad, SIGNAL(triggered()), this, SLOT(on_actionLoad_triggered()));
     connect(ui->checkBox, SIGNAL(clicked(bool)), this, SLOT(ischecked(bool)));
@@ -87,7 +89,6 @@ void MainWindow::on_actionDuplicates_triggered()
         for(int i = 0 ; i < extract.gg->length() ; i++) {
             ui->splitter->appendPlainText(extract.gg->at(i));
         }
-        //delete gg;
         // --
         // redisplay list count
         int counter = ui->splitter->document()->blockCount();
@@ -95,10 +96,6 @@ void MainWindow::on_actionDuplicates_triggered()
     } else  {
         QMessageBox::information(this, "Error", "PDF File Not Loaded", QMessageBox::Ok);
     }
-    //size
-    //unsigned long ab = sizeof (gg);
-    //QString vv = QString::number(ab);
-    // ui->label->setText(vv);
 }
 
 void MainWindow::on_actionClear_triggered()

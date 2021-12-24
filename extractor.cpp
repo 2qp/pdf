@@ -2,7 +2,6 @@
 
 extractor::extractor()
 {
-    //QObject::connect(ui->checkBox, SIGNAL(clicked(bool)), this, SLOT(ischecked(bool)));
 }
 
 void extractor::load(QWidget * (t))
@@ -34,7 +33,7 @@ void extractor::extr(int page)
     std::string a = b->toStdString();
     // Takes only space separated C++ strings.
     splitter(a);
-    // Converstion of Qlist to const to pump texedit
+    // Conversion of Qlist to const to pump texedit
     //s = new QStringList;
     s = templist;
     //delete templist;

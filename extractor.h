@@ -4,7 +4,6 @@
 
 #include <QtPdf/QPdfDocument>
 #include <QtPdf/QPdfSelection>
-#include <bits/stdc++.h>
 #include <iostream>
 #include <sstream>
 #include <QFileDialog>
