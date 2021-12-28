@@ -58,12 +58,13 @@ void MainWindow::on_actionRead_triggered()
             ui->plainTextEdit->setPlainText(*extract.allText);
         }
         // appending to splitter
-        for(int i = 0 ; i < extract.s->length() ; i++) {
-            ui->splitter->appendPlainText(extract.s->at(i));
+        for(int i = 0 ; i < extract.rawSliced->length() ; i++) {
+            ui->splitter->appendPlainText(extract.rawSliced->at(i));
         }
         // counting the list
         int counter = ui->splitter->document()->blockCount();
         ui->counts->display(counter);
+        delete extract.allText;
     } else  {
         QMessageBox::information(this, "Error", "PDF File Not Loaded", QMessageBox::Ok);
     }
@@ -82,42 +83,29 @@ void MainWindow::ischecked(bool checked)
 
 void MainWindow::on_actionDuplicates_triggered()
 {
-    if(extract.document->status() == 2) {
+    if(extract.document->status() == 2 && extract.extracted == true) {
+        nonDuplicated = new QStringList;
         ui->splitter->clear();
-        extract.s->removeDuplicates();
-        extract.gg = extract.s;
-        for(int i = 0 ; i < extract.gg->length() ; i++) {
-            ui->splitter->appendPlainText(extract.gg->at(i));
+        extract.rawSliced->removeDuplicates();
+        nonDuplicated = extract.rawSliced;
+        for(int i = 0 ; i < nonDuplicated->length() ; i++) {
+            ui->splitter->appendPlainText(nonDuplicated->at(i));
         }
         // --
         // redisplay list count
         int counter = ui->splitter->document()->blockCount();
         ui->counts->display(counter);
+        delete nonDuplicated;
     } else  {
-        QMessageBox::information(this, "Error", "PDF File Not Loaded", QMessageBox::Ok);
+        QMessageBox::information(this, "Error", "PDF File Not Loaded or not extracted", QMessageBox::Ok);
     }
 }
 
 void MainWindow::on_actionClear_triggered()
 {
-    if(extract.document->status() == 2) {
-        //delete document;
-        //delete s;
-        //delete templist;
-        //delete gg;
-        extract.templist->clear();
-        extract.s->clear();
-        extract.gg->clear();
-        ui->splitter->clear();
-        ui->plainTextEdit->clear();
-        extract.allText->clear();
-        extract.selectedText->clear();
-        extract.document->close();
-        extract.b->clear();
-        //document->destroyed();
-    } else {
-        QMessageBox::information(this, "Error", "Nothing to clear", QMessageBox::Ok);
-    }
+    ui->splitter->clear();
+    ui->plainTextEdit->clear();
+    extract.extracted = false;
 }
 
 void MainWindow::on_actionSave_triggered()

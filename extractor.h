@@ -28,12 +28,12 @@ public:
 
     // obj
     QString *allText;
-    QStringList *s;
-    QStringList *gg;
+    QStringList *rawSliced;
     QStringList *templist;
     QString *selectedText;
     QPdfDocument *document = new QPdfDocument;
-    QString *b;
+    QString *format;
+    bool extracted;
 
 private:
     //QPdfDocument *document = new QPdfDocument;

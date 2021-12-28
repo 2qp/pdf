@@ -41,6 +41,10 @@ private:
     Ui::MainWindow *ui;
     extractor extract;
 
+    //obj
+    QStringList *nonDuplicated;
+
+
     // dragger
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
