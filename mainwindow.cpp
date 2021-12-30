@@ -96,6 +96,7 @@ void MainWindow::on_actionDuplicates_triggered()
         int counter = ui->splitter->document()->blockCount();
         ui->counts->display(counter);
         delete nonDuplicated;
+        extract.extracted = false;
     } else  {
         QMessageBox::information(this, "Error", "PDF File Not Loaded or not extracted", QMessageBox::Ok);
     }
